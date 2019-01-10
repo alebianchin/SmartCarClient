@@ -8,6 +8,7 @@ namespace SmartCarClient
     {
         static void Main(string[] args)
         {
+            //
             MessageQueuing queue = new MessageQueuing();
             ThreadStart threadDelegate = new ThreadStart(HTTPSender.sendData);
             Thread t = new Thread(threadDelegate);
