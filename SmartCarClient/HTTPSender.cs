@@ -18,7 +18,7 @@ namespace SmartCarClient
                 try
                 {
                     //HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/data");
-                    HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.101.121:8080/cars/car1/data");
+                    HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.101.121:8080/v1/cars/car1/data");
                     httpWebRequest.ContentType = "text/json";
                     httpWebRequest.Method = "POST";
                     httpWebRequest.Timeout = 5000;
