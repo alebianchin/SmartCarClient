@@ -16,9 +16,9 @@ namespace SmartCarClient
                 MessageQueue.Create(@".\Private$\queue");
             messageQueue = new MessageQueue(@".\Private$\queue");
         }
-        public void addMessage(string message)
+        public void addMessage(string message, string label)
         {
-            messageQueue.Send(message, "queue");
+            messageQueue.Send(message, label);
         }
         public Message[] getAllMessages()
         {

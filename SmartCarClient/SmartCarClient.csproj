@@ -187,8 +187,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarReading.cs" />
-    <Compile Include="HTTPSender.cs" />
     <Compile Include="MessageQueuing.cs" />
     <Compile Include="MQTTSender.cs" />
     <Compile Include="Program.cs" />
