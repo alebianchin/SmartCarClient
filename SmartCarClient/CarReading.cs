@@ -36,12 +36,6 @@ namespace SmartCarClient
                         new { fldName = "lat", value = latJson },
                         new { fldName = "lon", value =lonJson }
                     },
-                tags = new[] {
-                        new { fldName = "temperatura", value = tempJson },
-                        new { fldName = "velocità", value =speedJson },
-                        new { fldName = "lat", value = latJson },
-                        new { fldName = "lon", value = lonJson }
-                    },
                 direction = dir.getDirection(),
                 timestamp = epoch
             };
