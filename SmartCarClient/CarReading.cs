@@ -22,18 +22,24 @@ namespace SmartCarClient
 
         public object GetReading()
         {
-            RootObject r = new RootObject();
-            Field f = new Field();
-            f.temperature = temp.getTemperature();
-            f.speed = speed.getSpeed();
-            f.lat = gps.getLat();
-            f.lon = gps.getLon();
-            r.fields = new System.Collections.Generic.List<Field>();
-            r.fields.Add(f); 
-            r.measurement = "misura";
-            r.timestamp = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
-        
-            return r;
+            var tempJson = temp.getTemperature();
+            var speedJson = speed.getSpeed();
+            var latJson = gps.getLat();
+            var lonJson = gps.getLon();
+            long epoch = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+
+            var x = new
+            {
+                fields = new[] {
+                        new { fldName = "temperatura", value = tempJson },
+                        new { fldName = "velocità", value = speedJson },
+                        new { fldName = "lat", value = latJson },
+                        new { fldName = "lon", value =lonJson }
+                    },
+                direction = dir.getDirection(),
+                timestamp = epoch
+            };
+            return x;
         }
     }
 }

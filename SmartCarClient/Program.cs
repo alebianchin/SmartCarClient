@@ -1,5 +1,4 @@
 ﻿using System;
-using CoAP;
 using System.Threading;
 using Newtonsoft.Json;
 
@@ -11,7 +10,7 @@ namespace SmartCarClient
         {
 
             MessageQueuing queue = new MessageQueuing();
-            ThreadStart threadDelegate = new ThreadStart(COAPSender.sendData);
+            ThreadStart threadDelegate = new ThreadStart(AMQPSender.SendData);
             Thread t = new Thread(threadDelegate);
             CarReading carReading = new CarReading();
             t.Start();
